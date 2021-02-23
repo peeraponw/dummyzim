@@ -3,6 +3,7 @@ import joblib
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+import uvicorn
 
 app = FastAPI()
 
@@ -16,4 +17,6 @@ async def api(a1: float=0, a2: float=0, a3: float=0):
     
     pred = clf.predict([[a1, a2, a3]])
     return {"predict": bool(pred)}
-    
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0")
