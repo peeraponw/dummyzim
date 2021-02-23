@@ -12,10 +12,10 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 @app.get("/api/")
-async def api(a1: float=0, a2: float=0, a3: float=0):
+async def api(temp: float=0, dTdt: float=0, dTdx: float=0):
     clf = joblib.load("rf.pkl")
     
-    pred = clf.predict([[a1, a2, a3]])
+    pred = clf.predict([[temp, dTdt, dTdx]])
     return {"predict": bool(pred)}
 
 if __name__ == "__main__":
