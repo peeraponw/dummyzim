@@ -6,7 +6,7 @@ graphene==2.1.8
 itsdangerous==1.1.0
 jupyter==1.0.0
 orjson==3.4.8
-pandas==1.2.2
+pandas==1.1.5
 pip-chill==1.0.1
 python-dotenv==0.15.0
 python-multipart==0.0.5
